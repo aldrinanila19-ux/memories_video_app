@@ -43,3 +43,41 @@ from moviepy.editor import (
 )
 import os
 import shutil
+
+
+
+🚀 How It Works
+
+User uploads:
+
+images(max 10)
+
+1 music file
+
+A Bible verse or memorial text
+
+Images are processed and resized using PIL
+
+Text is wrapped and overlaid on images
+
+Video clips are created using MoviePy
+
+Background music is synced
+
+▶️ How to Run the Project
+1️⃣ Clone the Repository
+git clone https://github.com/USERNAME/REPO_NAME.git
+cd REPO_NAME
+
+2️⃣ Create Virtual Environment (Recommended)
+python -m venv venv
+source venv/bin/activate   # Windows: venv\Scripts\activate
+
+3️⃣ Install Dependencies
+pip install flask pillow moviepy numpy
+
+4️⃣ Run the Application
+python app.py
+
+5️⃣ Open in Browser
+http://127.0.0.1:5000/A 1-minute montage video is generated and saved
