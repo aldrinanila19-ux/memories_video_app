@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Beloved-Memories Video</title>
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Segoe UI", Arial, sans-serif;
+            background-color: #f9fdfb;
+            color: #2f4f4f;
+        }
+
+        /* Header */
+        .header {
+            background-color: #e6f4ef;
+            padding: 25px;
+            text-align: center;
+            border-bottom: 1px solid #cce3da;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 36px;
+            color: #2e6f5e;
+        }
+
+        .header p {
+            margin-top: 8px;
+            font-size: 15px;
+            color: #4f7f73;
+        }
+
+        /* Main container */
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            background: #ffffff;
+            border-radius: 14px;
+            padding: 35px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .section h3 {
+            margin-bottom: 10px;
+            color: #2e6f5e;
+        }
+
+        .section p {
+            margin: 5px 0 15px;
+            font-size: 14px;
+            color: #5f7f76;
+        }
+
+        input[type="file"] {
+            width: 100%;
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid #cce3da;
+            background-color: #f9fdfb;
+        }
+
+        /* Generate button */
+        .generate-btn {
+            background-color: #7fbfaf;
+            color: white;
+            border: none;
+            padding: 14px 35px;
+            border-radius: 30px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+
+        .generate-btn:hover {
+            background-color: #6aa99a;
+        }
+
+        /* Center button */
+        .center {
+            text-align: center;
+        }
+
+        /* Video preview */
+        .preview-container {
+            margin-top: 40px;
+            padding: 25px;
+            border-radius: 12px;
+            background-color: #f1faf6;
+            border: 1px solid #cce3da;
+            text-align: center;
+        }
+
+        video {
+            width: 100%;
+            max-width: 700px;
+            border-radius: 10px;
+            margin-top: 15px;
+        }
+
+        /* Download button */
+        .download-btn {
+            margin-top: 20px;
+            background-color: #2e6f5e;
+            color: white;
+            border: none;
+            padding: 12px 28px;
+            border-radius: 25px;
+            font-size: 15px;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+
+        .download-btn:hover {
+            background-color: #1a3e35;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            font-size: 13px;
+            color: #7a9c93;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <div class="header">
+        <h1>Beloved</h1>
+        <p>A gentle way to preserve memories forever</p>
+    </div>
+
+    <!-- MAIN CARD -->
+    <div class="container">
+
+        <form method="POST" enctype="multipart/form-data">
+
+            <!-- Photos -->
+            <div class="section">
+                <h3>📸 Upload Photos</h3>
+                <p>Select up to 10 cherished images</p>
+                <input type="file" name="photos" multiple accept="image/*" required>
+            </div>
+
+            <!-- Music -->
+            <div class="section">
+                <h3>🎵 Background Music</h3>
+                <p>Choose a meaningful audio track</p>
+                <input type="file" name="music" accept="audio/*" required>
+            </div>
+            
+            <!-- Text -->
+            <div class="section">
+                <h3>🕊️ Memorial Text</h3>
+                <p>Enter a short message or name</p>
+                <input type="text" name="memorial_text"
+                    placeholder="Forever in our hearts"
+                    maxlength="30">
+            </div>
+
+
+            <!-- Button -->
+            <div class="center">
+                <button type="submit" class="generate-btn">Generate Video</button>
+            </div>
+
+        </form>
+
+        {% if video_generated %}
+        <!-- Preview -->
+        <div class="preview-container">
+            <h3>🎬 Memory Video Preview</h3>
+
+            <video controls>
+                <source src="/static/generated/memories_video.mp4" type="video/mp4">
+            </video>
+
+            <br>
+
+            <a href="/download">
+                <button class="download-btn">⬇ Download Video</button>
+            </a>
+        </div>
+        {% endif %}
+
+    </div>
+
+    <div class="footer">
+        © 2026 Beloved · Memories that live on
+    </div>
+
+</body>
+</html>
